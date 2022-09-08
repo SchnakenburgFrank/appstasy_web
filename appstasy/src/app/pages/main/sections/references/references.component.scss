@@ -1,0 +1,19 @@
+.desktop {
+  display: none;
+  @media (min-width: 768px) {
+    display: flex;
+  }
+}
+
+.mobile {
+  display: none;
+  @media (max-width: 767px) {
+    display: contents;
+  }
+}
+
+.overflow-lg-auto {
+  @media (min-width: 992px) {
+    overflow: auto;
+  }
+}

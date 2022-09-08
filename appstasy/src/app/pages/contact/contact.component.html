@@ -1,0 +1,47 @@
+<div class="container">
+  <h1 class="mt-3">
+    <span>[</span> <span class="inside">&nbsp;Kontakt&nbsp;</span> <span>]</span>
+  </h1>
+
+  <form [formGroup]="contactGroup">
+    <div class="form-row">
+      <div class="col-md-4 mb-3">
+        <label for="name">Name</label>
+        <input formControlName="name" type="text" class="form-control" id="name"
+               placeholder="Max Mustermann"
+               required>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="col-md-6 mb-3">
+        <label for="mail">E-Mail Adresse</label>
+        <input formControlName="email" type="text" class="form-control" id="mail"
+               placeholder="beispiel@mail.com" required>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="col-md-6 mb-3">
+        <label for="company">Firma</label>
+        <input formControlName="company" type="text" class="form-control" id="company"
+               placeholder="Beispiel GmbH">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="col-md-6 mb-3">
+        <label for="message">Nachricht</label>
+        <textarea formControlName="message" class="form-control" id="message" rows="3"></textarea>
+      </div>
+    </div>
+
+    <div class="form-check mb-3">
+      <label class="form-check-label" for="check">
+        Ich bin mit den Datenschutzbestimmungen einverstanden
+      </label>
+      <input formControlName="consent" class="form-check-input" type="checkbox" id="check" required>
+    </div>
+
+    <button class="btn btn-primary btn-custom" type="submit" (click)="sendRequest()">Anfrage senden</button>
+  </form>
+
+
+</div>

@@ -1,0 +1,16 @@
+.end-font {
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 21px;
+  text-align: center;
+  letter-spacing: -0.015em;
+  color: white;
+
+  @media (min-width: 992px) {
+    font-size: 24px;
+  }
+  @media (min-width: 1200px) {
+    font-size: 36px;
+  }
+}

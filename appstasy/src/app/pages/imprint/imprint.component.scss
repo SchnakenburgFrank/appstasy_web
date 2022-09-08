@@ -1,0 +1,16 @@
+:host {
+  display: flex;
+  flex-grow: 1;
+  margin-top: 80px;
+  z-index: 5;
+}
+
+h1 span {
+  font-weight: 800;
+  color: var(--prim);
+
+  &.inside{
+    font-weight: 700;
+    color: var(--prim-dark);
+  }
+}

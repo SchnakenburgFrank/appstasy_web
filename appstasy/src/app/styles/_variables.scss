@@ -1,0 +1,17 @@
+
+$primary: #478BB2;
+$primary-color: white;
+
+:root
+{
+  --prim: #478BB2;
+  --prim-color: white;
+  --prim-dark: #3F5D82;
+  --prim-darker: #0A2738;
+
+  --box-shadow: 4px 4px 6px 0 rgba(0, 0, 0, 0.35);
+  --hover-box-shadow: 4px 4px 12px 0 rgba(0, 0, 0, 0.35);
+  --border-radius: .5rem;
+
+  --base-speed: .75s;
+}

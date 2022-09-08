@@ -1,0 +1,159 @@
+:host {
+  display: flex;
+
+  @media (min-width: 992px) {
+    filter: grayscale(100%);
+    transition: all .3s ease-in-out;
+    border-radius: var(--border-radius);
+
+    &.active {
+      filter: grayscale(0);
+    }
+
+    &:not(.active):hover {
+      filter: grayscale(50%);
+    }
+  }
+}
+
+.card {
+  transition: all .3s ease-in-out;
+
+  box-shadow: var(--box-shadow);
+  border: none !important;
+  min-height: 21rem;
+
+  @media (min-width: 1200px) {
+    min-height: 26rem;
+  }
+
+  @media (min-width: 1400px) {
+    min-height: 21rem;
+  }
+
+  @media (min-width: 1700px) {
+    min-height: 26rem;
+  }
+
+  &:hover {
+    box-shadow: var(--hover-box-shadow);
+  }
+
+  .card-body {
+    border-radius: var(--border-radius);
+    background-size: cover;
+    background-position-x: center;
+
+    &:before {
+      z-index: 1;
+      content: '';
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 14rem;
+      background-image: linear-gradient(to bottom, rgba(71, 139, 178, 0) 0%, rgba(71, 139, 178, 1) 75%);
+      position: absolute;
+      border-radius: var(--border-radius);
+    }
+  }
+}
+
+/// FLIP CARD ///
+
+.flip-card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  @media (max-width: 470px) {
+    min-height: 16rem;
+  }
+
+  @media (min-width: 471px) {
+    min-height: 20rem;
+  }
+
+  @media (min-width: 767px) {
+    min-height: 27rem;
+  }
+
+  min-height: 468px;
+  perspective: 1000px;
+}
+
+.content {
+  width: 100%;
+  height: 100%;
+
+  box-shadow: var(--box-shadow);
+  border-radius: var(--border-radius);
+
+  transition: transform 1s;
+  transform-style: preserve-3d;
+
+  div.front {
+
+    transform: rotateX(0deg);
+    overflow: hidden;
+    background: var(--prim);
+
+    &:before {
+      z-index: 1;
+      content: '';
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 14rem;
+      background-image: linear-gradient(to bottom, rgba(71, 139, 178, 0) 0%, rgba(71, 139, 178, 1) 75%);
+      position: absolute;
+      border-radius: var(--border-radius);
+    }
+  }
+}
+
+.flip-card.flip .content {
+  transform: rotateY(180deg);
+  transition: transform 0.5s;
+}
+
+.front,
+.back {
+  @media (max-width: 768px) {
+    padding: 1rem;
+  }
+
+  padding: 2rem;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: white;
+  color: #3F5D82;
+  backface-visibility: hidden;
+  border-radius: var(--border-radius);
+}
+
+.back {
+  background: linear-gradient(180deg, rgb(63, 93, 130) 0%, rgba(71, 139, 178, 1) 100%);
+  color: white;
+  transform: rotateY(180deg);
+  overflow: auto;
+}
+
+.small-text {
+  font-size: 12px;
+}
+
+.center-img {
+  height: 100%;
+  margin-top: -1rem;
+  object-fit: fill;
+  margin-left: -1rem;
+  z-index: 0;
+  left: 50%;
+  transform: translate(-46%, 0);
+}
+
+.unset-text {
+  font-size: inherit;
+  line-height: inherit;
+}

@@ -1,0 +1,18 @@
+<div class="d-md-block d-none">
+  <h1>{{content.heading}}</h1>
+  <h4>{{content.subheading}}</h4>
+  <p style="max-width: 60%;">{{content.content}}</p>
+</div>
+
+<div #flipcardFront (click)="flipCard(flipcardFront)" class="flip-card d-md-none d-flex pb-3">
+  <div class="content">
+    <div class="front">
+      <h1>{{content.heading}}</h1>
+      <h4>{{content.subheading}}</h4>
+      <img src="assets/image%201.png" class="w-100" alt="placeholder">
+    </div>
+    <div class="back">
+      <p>{{content.content}}</p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,81 @@
+:host div {
+  object {
+    margin-top: 5vh;
+  }
+
+  @media (min-width: 576px) {
+    object {
+      max-width: 50vw;
+      margin-right: 15vw;
+      margin-top: 5vh;
+    }
+  }
+}
+
+.sub-heading {
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  text-align: center;
+  color: var(--prim);
+
+  & > span {
+    display: inline-block;
+    overflow: hidden;
+    text-align: left;
+
+    .word {
+      @media (min-width: 576px) {
+        font-size: 2.4vw;
+      }
+
+      transform: translateY(60px);
+      display: inline-block;
+      position: relative;
+      font-size: 3.4vw;
+      line-height: 3vw;
+    }
+
+
+    &:nth-child(1) {
+      .word {
+        animation: .5s ease-in-out 2.4s forwards textUp;
+      }
+    }
+
+    &:nth-child(2) {
+      .word {
+        animation: .5s ease-in-out 2.65s forwards textUp;
+      }
+    }
+
+    &:nth-child(3) {
+      .word {
+        animation: .5s ease-in-out 2.8s forwards textUp;
+      }
+    }
+
+    &:nth-child(4) {
+      .word {
+        animation: .5s ease-in-out 2.95s forwards textUp;
+      }
+    }
+
+    &:nth-child(5) {
+      .word {
+        animation: .5s ease-in-out 3.1s forwards textUp;
+      }
+    }
+
+  }
+}
+
+.custom-space {
+  margin-right: .77vw;
+}
+
+@keyframes textUp {
+  to {
+    transform: translateY(0);
+  }
+}

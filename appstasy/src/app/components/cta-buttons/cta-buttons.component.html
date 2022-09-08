@@ -1,0 +1,29 @@
+<div class="cta-button-row d-none d-md-block">
+  <a class="cta-button mb-3" routerLink="/contact"><img src="assets/cta-buttons/chat.svg" alt="kontakt"></a>
+  <a class="cta-button mb-3" href="mailto:info@appstasy.de"><img src="assets/cta-buttons/mail.svg" alt="email"></a>
+  <a class="cta-button mb-3" href="tel:555-555-5555"><img src="assets/cta-buttons/phone.svg" alt="telefon"></a>
+  <a class="cta-button" href="https://de.linkedin.com/company/appstasy" target="_blank"><img
+    style="margin-right: -.2rem" src="assets/cta-buttons/li.png" alt="linkedin"></a>
+</div>
+
+<div class="cta-button-row mob d-block d-md-none">
+  <div class="position-relative">
+    <div #ctaContainer id="a" class="position-absolute">
+      <a class="cta-button mb-3" routerLink="/contact"><img src="assets/cta-buttons/chat.svg" alt="kontakt"></a>
+      <a class="cta-button mb-3" href="mailto:info@appstasy.de"><img src="assets/cta-buttons/mail.svg" alt="email"></a>
+      <a class="cta-button mb-3" href="tel:555-555-5555"><img src="assets/cta-buttons/phone.svg" alt="telefon"></a>
+      <a class="cta-button mb-3" href="https://de.linkedin.com/company/appstasy" target="_blank"><img
+        style="margin-right: -.2rem" src="assets/cta-buttons/li.png" alt="linkedin"></a>
+      <a #ctaShow id="trigger_show" class="cta-button mb-3" (click)="openCta($event)">
+        <img src='assets/cta-buttons/add.svg' alt="open" style="pointer-events: none">
+      </a>
+      <a #ctaHide id="trigger_hide" class="cta-button mb-3" (click)="closeCta($event)">
+        <img src='assets/cta-buttons/minus.svg' alt="open" style="pointer-events: none">
+      </a>
+    </div>
+
+
+  </div>
+
+
+</div>

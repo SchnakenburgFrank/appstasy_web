@@ -1,0 +1,141 @@
+@import "src/app/styles/variables";
+
+
+$main-font-one: 'Montserrat';
+
+// NAVIGATION
+$nav-link-font-weight: 700;
+$nav-link-color: #AAA;
+$nav-link-hover-color: lighten($primary, 10%);
+$nav-tabs-link-hover-border-color: transparent transparent transparent;
+$body-bg: transparent;
+$nav-tabs-link-active-color: $primary;
+$nav-tabs-link-active-border-color: transparent transparent transparent;
+
+// CARD
+$card-border-radius: .5rem;
+$card-border-color: #EEEEEE;
+
+// BUTTON
+$btn-font-family: $main-font-one;
+$btn-padding-y: 0.75rem;
+$btn-padding-x: 2.5rem;
+$btn-font-size: 17px;
+$btn-line-height: 21px;
+$btn-font-weight: 500;
+$btn-link-color: red;
+
+// NAV
+
+$navbar-light-color: rgba($primary, .5);
+$navbar-light-hover-color: rgba($primary, .7);
+$navbar-light-active-color: rgba($primary, .9);
+
+button {
+
+
+  &.btn-custom {
+    &.bright{
+      color: var(--prim) !important;
+    }
+    color: white !important;
+  }
+}
+
+@import "bootstrap";
+
+* {
+  scrollbar-color: #0a2738 transparent;
+  scrollbar-width: thin;
+}
+
+::-webkit-scrollbar {
+  width: .35rem;
+  height: .35rem;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(10, 39, 56, .5);
+  border-radius: .5rem;
+}
+
+html, body {
+    height: 100%;
+    color: #0A2738;
+}
+
+@media (min-width: 1560px) {
+  .container {
+    max-width: fit-content;
+    max-width: -webkit-fill-available;
+    max-width: -moz-available;
+    margin-left: 80px;
+    margin-right: 80px;
+  }
+}
+
+.white {
+  color: white;
+}
+
+p {
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: unset;
+  letter-spacing: -0.015em;
+  @media (min-width: 769px) {
+    font-size: 1vw;
+    line-height: 1.75vw;
+  }
+}
+
+/// GLOBAL FLIPCARD STYLES /////
+
+.flip-card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: calc(70vh - 80px);
+  perspective: 1000px;
+}
+
+.content {
+  width: 100%;
+  height: 100%;
+
+  border-right: var(--border-radius);
+
+  transition: transform 1s;
+  transform-style: preserve-3d;
+}
+
+.flip-card.flip .content {
+  transform: rotateY(180deg);
+  transition: transform 0.5s;
+}
+
+.front,
+.back {
+  padding: 1rem;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: white;
+  color: #3F5D82;
+  backface-visibility: hidden;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+
+.back {
+  background: linear-gradient(180deg, rgb(63, 93, 130) 0%, rgba(71,139,178,1) 100%);
+  color: white;
+  transform: rotateY(180deg);
+  word-break: break-word;
+}

@@ -1,0 +1,20 @@
+<div class="d-flex flex-grow-1 flex-column">
+  <div style="z-index: 3; min-height: 0" class="d-flex flex-grow-1 flex-column">
+    <div class="d-flex flex-grow-1" style="min-height: 0; height: 30rem">
+      <div id="member-container" class="d-flex flex-wrap col-lg-8 col mr-3 overflow-auto p-2">
+        <app-staff-card #staffCard class="col-6 col-xxl-4 col-xl-6 col-md-6 mb-4"
+                         *ngFor="let staff of staff; first as first; even as even; odd as odd"
+                         [first]="first" [even]="even" [odd]="odd"
+                         [staff]="staff"
+                         (click)="changeActiveWorkerCard(staffCard)"
+        ></app-staff-card>
+      </div>
+      <div class="col-4 d-none d-lg-block ps-4">
+        <h1>{{activeWorker?.name}}</h1>
+        <p>{{activeWorker?.description}}
+        </p>
+        <button type="button" class="btn btn-primary btn-custom">Kontaktieren</button>
+      </div>
+    </div>
+  </div>
+</div>

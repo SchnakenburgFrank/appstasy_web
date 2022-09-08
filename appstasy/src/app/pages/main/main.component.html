@@ -1,0 +1,19 @@
+<!-- TITLE -->
+<app-title #section1 id="title" appIsVisible (intersecting)="sectionIntersecting(section1)"
+           class="d-flex flex-grow-1 container section"></app-title>
+
+<!-- PORTFOLIO -->
+<app-portfolio #section2 id="portfolio" appIsVisible (intersecting)="sectionIntersecting(section2)"
+               class="d-flex flex-grow-1 container section overflow-hidden px-0"></app-portfolio>
+
+<!-- REFERENZEN -->
+<app-references #section3 id="references" appIsVisible (intersecting)="sectionIntersecting(section3)"
+                class="d-flex flex-grow-1 container section"></app-references>
+
+<!-- TEAM -->
+<app-team #section4 id="team" appIsVisible (intersecting)="sectionIntersecting(section4)"
+          class="d-flex flex-grow-1 container section"></app-team>
+
+<!-- CLOSING -->
+<app-closing id="closing" #section5 appIsVisible (intersecting)="sectionIntersecting(section5)"
+             class="d-flex flex-grow-1 container section"></app-closing>

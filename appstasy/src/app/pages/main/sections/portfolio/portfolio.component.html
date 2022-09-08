@@ -1,0 +1,64 @@
+<div class="d-flex flex-grow-1 flex-column mw-100 position-relative">
+  <div style="z-index: 3" class="d-flex flex-grow-1 mw-100">
+    <div class="d-flex flex-wrap flex-md-nowrap mw-100">
+      <div #placeholder class="col-1 d-none d-lg-flex"></div>
+      <div #menu class="col-12 d-none d-lg-block col-md-4 portfolio">
+        <button class="active" #catButton (click)="changeActive($event)">Individuelle Softwarelösungen</button>
+        <button #catButton (click)="changeActive($event)">Unsere Softwarelösungen</button>
+        <button #catButton (click)="changeActive($event)">Software as a Service</button>
+      </div>
+
+      <div #placeholder2 class="col-2 d-none d-lg-flex"></div>
+
+      <div #parent class="col d-none d-lg-flex align-self-end">
+        <div #cardBig class="card">
+          <div class="card-body d-flex flex-column flex-grow-1 justify-content-between">
+            <div>
+              <h1>{{portfolioTeaserContent[activeContent].heading}}</h1>
+              <p>{{portfolioTeaserContent[activeContent].content}}</p>
+            </div>
+            <div class="text-end">
+              <button type="button" class="btn btn-primary btn-custom"
+                      (click)="hideCard(cardBig, menu, parent, carousel, mockups, placeholder, placeholder2)">Mehr
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div #carousel id="carousel" class="d-lg-none d-block col-md-7" style="width: 100%; max-width: 870px">
+
+        <ul class="nav nav-tabs justify-content-lg-between justify-content-start mobile-carousel-header mx-3" id="myTab"
+            role="tablist">
+          <li class="nav-item" role="presentation">
+            <button #catCarouselButton (click)="changeActiveFromCarousel($event)" class="nav-link active"
+                    id="ind-soft-tab" data-bs-toggle="tab" data-bs-target="#ind-soft"
+                    type="button" role="tab" aria-controls="ind-soft" aria-selected="true">Individuelle
+              Softwarelösungen
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button #catCarouselButton (click)="changeActiveFromCarousel($event)" class="nav-link" id="eig-soft-tab"
+                    data-bs-toggle="tab" data-bs-target="#eig-soft" type="button"
+                    role="tab" aria-controls="eig-soft" aria-selected="false">Unsere Softwarelösungen
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button #catCarouselButton (click)="changeActiveFromCarousel($event)" class="nav-link text-start"
+                    id="forsch-tab" data-bs-toggle="tab" data-bs-target="#forsch"
+                    type="button"
+                    role="tab" aria-controls="forsch" aria-selected="false">Software as a Service
+            </button>
+          </li>
+        </ul>
+        <div class="tab-content h-100">
+          <app-portfolio-carousel-item *ngFor="let content of portfolioContents; first as first" [first]="first"
+                                       [category]="content.category" [content]="content" class="h-100">
+          </app-portfolio-carousel-item>
+        </div>
+      </div>
+    </div>
+  </div>
+  <img #mockups id="mockups" alt="device mockups" src="assets/device%20_mockups_empty.png"
+       class="position-absolute d-none d-md-block " style="">
+</div>

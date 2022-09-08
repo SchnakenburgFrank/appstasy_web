@@ -1,0 +1,60 @@
+<div class="d-flex flex-grow-1 flex-column">
+  <div style="z-index: 3; min-height: 0" class="d-flex flex-grow-1 flex-column">
+    <div class="flex-grow-1 desktop" style="min-height: 0">
+      <div class="col-1 d-xl-block d-none"></div>
+      <div class="d-flex align-self-start col-xl-5 col-6 mb-5 h-100">
+        <img *ngIf="!!references[activeReference].image" class="w-100 h-100 pe-5" style="object-fit: contain; object-position: top" alt="company image"
+             [src]="references[activeReference].image">
+      </div>
+      <div class="d-flex col-xl-5 col6 overflow-auto">
+        <div class="d-flex flex-column white">
+          <h1>{{references[activeReference].name}}</h1>
+          <p class="overflow-auto" style="min-height: 0;"> {{references[activeReference].description}}</p>
+        </div>
+
+      </div>
+      <div class="col-1 d-xl-block d-none"></div>
+    </div>
+    <div class="mobile mb-5">
+
+      <div #flipcardFront4 (click)="flipCard(flipcardFront4)" class="flip-card d-md-none d-flex pb-3">
+        <div class="content">
+          <div class="front">
+            <div class="d-flex justify-content-between mb-3">
+              <h2>{{references[activeReference].name}}</h2>
+              <img alt="logo" [src]="references[activeReference].logo">
+            </div>
+            <div class="d-flex">
+              <img alt="company image" *ngIf="!!references[activeReference].image" class="w-100" [src]="references[activeReference].image">
+            </div>
+          </div>
+          <div class="back">
+            <p>{{references[activeReference].description}}</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="d-flex position-relative px-5">
+
+      <div class="d-flex align-items-center position-absolute h-100 chev" style="z-index: 2; left: 0; opacity: .5">
+        <span class="material-icons position-absolute" aria-hidden="true" style="font-size: 3.5rem; color: #0A2738;">chevron_left</span>
+      </div>
+
+      <div class="d-flex flex-grow-1 position-relative"
+           style="padding: 1rem 3rem; gap: 3rem;overflow: auto;width: 0;">
+        <ng-container *ngFor="let reference of references; first as first; index as index">
+          <app-company-card #portfolioCard class="mr-3" [ngClass]="{'active': first === true}"
+                            (click)="changeActivePortfolioCard(portfolioCard, index)"
+                            [reference]="reference"
+          ></app-company-card>
+        </ng-container>
+      </div>
+
+      <div class="d-flex align-items-center position-absolute h-100 chev" style="z-index: 2; right: 0; opacity: .5">
+        <span class="material-icons position-absolute" aria-hidden="true" style="font-size: 3.5rem; right: -1rem; color: #0A2738;">chevron_right</span>
+      </div>
+
+    </div>
+  </div>
+</div>

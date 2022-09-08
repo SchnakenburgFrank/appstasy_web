@@ -1,0 +1,44 @@
+<nav class="navbar navbar-light bg-light w-100 position-fixed">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <img src="../../../assets/logos/logo.svg" alt="logo" width="auto" height="54">
+    </a>
+    <ul class="navbar-nav flex-row justify-content-between d-none d-md-flex" style="width: 405px">
+      <li class="nav-item" (click)="changeActive($event)">
+        <a #listEntry class="nav-link" routerLink="/main">Portfolio</a>
+      </li>
+      <li class="nav-item" (click)="changeActive($event)">
+        <a #listEntry class="nav-link" routerLink="/main">Partner</a>
+      </li>
+      <li class="nav-item" (click)="changeActive($event)">
+        <a #listEntry class="nav-link" routerLink="/main">Team</a>
+      </li>
+      <li class="nav-item" routerLink="/contact">
+        <a #listEntry class="nav-link">Kontakt</a>
+      </li>
+      <li>
+<!--        <button class="btn btn-primary open-zammad-chat" (click)="null">Chat with us</button>-->
+
+<!--        <button class="open-zammad-chat">Chat with us</button>-->
+<!--        <script src="https://support.appstasy.de/assets/chat/chat.min.js"></script>-->
+<!--        <script> import {$} from "protractor";-->
+
+<!--        $(function () {-->
+<!--        new ZammadChat({fontSize: '12px', chatId: 1, show: false});-->
+<!--        }); </script>-->
+      </li>
+    </ul>
+
+    <div ngbDropdown class="d-flex d-md-none" display="dynamic" placement="bottom-end">
+      <button ngbDropdownToggle class="btn" type="button" id="dropdownMenuButton1" aria-expanded="false">
+        <i class="material-icons">menu</i>
+      </button>
+      <div ngbDropdownMenu aria-labelledby="dropdownMenuButton1">
+        <button #mobileListEntry ngbDropdownItem (click)="changeActive($event)">Porfolio</button>
+        <button #mobileListEntry ngbDropdownItem (click)="changeActive($event)">Partner</button>
+        <button #mobileListEntry ngbDropdownItem (click)="changeActive($event)">Team</button>
+        <button #mobileListEntry ngbDropdownItem (click)="changeActive($event)">Kontakt</button>
+      </div>
+    </div>
+  </div>
+</nav>
