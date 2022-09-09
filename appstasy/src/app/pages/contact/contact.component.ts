@@ -41,10 +41,15 @@ export class ContactComponent implements OnInit {
 
   sendRequest(): void {
     if (this.contactGroup.valid) {
+      // contains the email address of staff member if contact page is called via "kontaktieren"-button
+      // of said staff member. Can be used to orchestrate mails that get sent from contact form.
+      // const staffMail = this.navService.contactMail;
+
       const request = this.contactGroup.value;
       // TODO add logic for sending mail with contents of request
       // sendEmail(request)
       this.formInvalid = false;
+      this.navService.setContactMail(undefined);
     } else {
       this.formInvalid = true;
       this.validateAllFormFields(this.contactGroup);

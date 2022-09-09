@@ -53,12 +53,14 @@
         </ul>
         <div class="tab-content h-100">
           <app-portfolio-carousel-item *ngFor="let content of portfolioContents; first as first" [first]="first"
-                                       [category]="content.category" [content]="content" class="h-100">
+                                       [category]="content.category" [content]="content" class="h-100" (mockupEmitter)="changeMockup($event)"
+                                        [getChildIndex]="getChildIndexFlag">
           </app-portfolio-carousel-item>
         </div>
       </div>
     </div>
   </div>
-  <img #mockups id="mockups" alt="device mockups" src="assets/device%20_mockups_empty.png"
+  <img #mockups id="mockups" alt="device mockups"
+       [src]="this.currentMockup"
        class="position-absolute d-none d-md-block " style="">
 </div>

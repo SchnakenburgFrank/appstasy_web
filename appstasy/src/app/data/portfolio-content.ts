@@ -1,4 +1,4 @@
-import {PortfolioContent} from '../model/content';
+import { PortfolioContent } from '../model/content';
 
 export const portfolioContents: PortfolioContent[] = [
   {
@@ -12,21 +12,24 @@ export const portfolioContents: PortfolioContent[] = [
           'Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, ' +
           'sed quia non numquam eius modi tempora.' + 'Eos qui ratione voluptatem sequi nesciunt. ' +
           'Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, ' +
-          'sed quia non numquam eius modi tempora.'
+          'sed quia non numquam eius modi tempora.',
+        mockup: 'assets/mockups/deviceMockupsEmpty.png'
       },
       {
         heading: 'Content Ind 2',
         subheading: 'Fantasie GmbH',
         content: 'Eos qui ratione voluptatem sequi nesciunt. ' +
           'Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, ' +
-          'sed quia non numquam eius modi tempora.'
+          'sed quia non numquam eius modi tempora.',
+        mockup: 'assets/mockups/device-mockups.png'
       },
       {
         heading: 'Content Ind 3',
         subheading: 'Fantasie GmbH',
         content: 'Eos qui ratione voluptatem sequi nesciunt. ' +
           'Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, ' +
-          'sed quia non numquam eius modi tempora.'
+          'sed quia non numquam eius modi tempora.',
+        mockup: 'assets/mockups/deviceMockupsEmpty.png'
       },
     ]
   },
@@ -41,21 +44,24 @@ export const portfolioContents: PortfolioContent[] = [
           'Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, ' +
           'sed quia non numquam eius modi tempora.' + 'Eos qui ratione voluptatem sequi nesciunt. ' +
           'Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, ' +
-          'sed quia non numquam eius modi tempora.'
+          'sed quia non numquam eius modi tempora.',
+        mockup: 'assets/mockups/deviceMockupsEmpty.png'
       },
       {
         heading: 'Content Eig 2',
         subheading: 'Fantasie GmbH',
         content: 'Eos qui ratione voluptatem sequi nesciunt. ' +
           'Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, ' +
-          'sed quia non numquam eius modi tempora.'
+          'sed quia non numquam eius modi tempora.',
+        mockup: 'assets/mockups/deviceMockupsEmpty.png'
       },
       {
         heading: 'Content Eig 3',
         subheading: 'Fantasie GmbH',
         content: 'Eos qui ratione voluptatem sequi nesciunt. ' +
           'Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, ' +
-          'sed quia non numquam eius modi tempora.'
+          'sed quia non numquam eius modi tempora.',
+        mockup: 'assets/mockups/device-mockups.png'
       },
     ]
   },
@@ -70,21 +76,24 @@ export const portfolioContents: PortfolioContent[] = [
           'Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, ' +
           'sed quia non numquam eius modi tempora.' + 'Eos qui ratione voluptatem sequi nesciunt. ' +
           'Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, ' +
-          'sed quia non numquam eius modi tempora.'
+          'sed quia non numquam eius modi tempora.',
+        mockup: 'assets/mockups/deviceMockupsEmpty.png'
       },
       {
         heading: 'Content Mar 2',
         subheading: 'Fantasie GmbH',
         content: 'Eos qui ratione voluptatem sequi nesciunt. ' +
           'Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, ' +
-          'sed quia non numquam eius modi tempora.'
+          'sed quia non numquam eius modi tempora.',
+        mockup: 'assets/mockups/deviceMockupsEmpty.png'
       },
       {
         heading: 'Content Mar 3',
         subheading: 'Fantasie GmbH',
         content: 'Eos qui ratione voluptatem sequi nesciunt. ' +
           'Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, ' +
-          'sed quia non numquam eius modi tempora.'
+          'sed quia non numquam eius modi tempora.',
+        mockup: 'assets/mockups/deviceMockupsEmpty.png'
       },
     ]
   },

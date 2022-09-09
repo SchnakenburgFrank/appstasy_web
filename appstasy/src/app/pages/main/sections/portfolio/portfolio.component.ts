@@ -1,15 +1,17 @@
-import { Component, ElementRef, QueryList, Renderer2, ViewChildren } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, QueryList, Renderer2, ViewChildren } from '@angular/core';
 import { portfolioContents, portfolioTeaserContent } from '../../../../data/portfolio-content';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-portfolio',
   templateUrl: './portfolio.component.html',
   styleUrls: ['./portfolio.component.scss']
 })
-export class PortfolioComponent {
+export class PortfolioComponent implements OnInit, AfterViewInit {
   id = 'portfolio';
 
   activeContent = 0;
+  activeTab = 0;
 
   portfolioTeaserContent = portfolioTeaserContent;
   portfolioContents = portfolioContents;
@@ -19,7 +21,20 @@ export class PortfolioComponent {
 
   currentBgPic = 'bg-pic1';
 
+  getChildIndexFlag = new BehaviorSubject(false);
+
+  currentMockup: string | undefined = '';
+
   constructor(private renderer2: Renderer2) {
+  }
+
+  ngAfterViewInit(): void {
+    this.catButtons.changes.subscribe(value => console.log(value));
+
+  }
+
+  ngOnInit(): void {
+    this.currentMockup = this.portfolioContents[0].contentParent[0].mockup;
   }
 
   changeActive($event: any): void {
@@ -39,6 +54,8 @@ export class PortfolioComponent {
         this.activeContent = index;
       }
     });
+
+    this.getChildIndex();
   }
 
   hideCard(card: HTMLDivElement, menu: HTMLDivElement,
@@ -69,5 +86,18 @@ export class PortfolioComponent {
     this.renderer2.addClass(document.getElementById(selectedBgPic), 'float-in');
 
     this.currentBgPic = selectedBgPic;
+    this.activeTab = selectedButton;
+
+    this.getChildIndex();
+
+  }
+
+  changeMockup($event: number): void {
+    this.getChildIndexFlag.next(false);
+    this.currentMockup = this.portfolioContents[this.activeTab].contentParent[$event].mockup;
+  }
+
+  private getChildIndex(): void {
+    this.getChildIndexFlag.next(true);
   }
 }

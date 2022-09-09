@@ -1,27 +1,56 @@
-import { Component, HostBinding, Input, OnInit, Renderer2 } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  EventEmitter,
+  HostBinding,
+  Input,
+  OnInit,
+  Output,
+  Renderer2
+} from '@angular/core';
 import { PortfolioContent } from '../../model/content';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-portfolio-carousel-item',
   templateUrl: './portfolio-carousel-item.component.html',
   styleUrls: ['./portfolio-carousel-item.component.scss']
 })
-export class PortfolioCarouselItemComponent implements OnInit {
+export class PortfolioCarouselItemComponent implements OnInit, AfterViewInit {
 
   @HostBinding('attr.aria-labelledby') tabLabel = '';
   @HostBinding('attr.role') role = 'tabpanel';
   @HostBinding('class') class = '';
   @HostBinding('id') id = '';
 
-  @Input() category = 0;
-
-  @Input() first = false;
-
   @Input() content!: PortfolioContent;
+  @Input() first = false;
+  @Input() category = 0;
+  @Input() getChildIndex!: BehaviorSubject<boolean>;
+
+  @Output() mockupEmitter = new EventEmitter<number>();
 
   target = '';
 
-  constructor(protected renderer2: Renderer2) {
+  myCarousel: HTMLElement | null = null;
+
+  activeSlide = 0;
+
+  constructor(protected renderer2: Renderer2, private ref: ElementRef) {
+  }
+
+  ngAfterViewInit(): void {
+    this.myCarousel = document.getElementById(this.target);
+    this.myCarousel?.addEventListener('slide.bs.carousel', ($event) => {
+
+      // @ts-ignore
+      const toSlide = $event.to;
+
+      this.activeSlide = toSlide;
+      this.mockupEmitter.emit(toSlide);
+
+    });
   }
 
   ngOnInit(): void {
@@ -35,5 +64,12 @@ export class PortfolioCarouselItemComponent implements OnInit {
     } else {
       this.class = 'tab-pane';
     }
+
+    this.getChildIndex.subscribe(value => {
+      if (value && this.ref.nativeElement.classList.contains('active')) {
+        this.mockupEmitter.emit(this.activeSlide);
+      }
+    });
   }
+
 }

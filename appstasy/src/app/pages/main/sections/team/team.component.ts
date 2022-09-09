@@ -1,7 +1,8 @@
 import { Component, ElementRef, OnInit, QueryList, Renderer2, ViewChildren } from '@angular/core';
 import { Employee } from '../../../../model/worker';
 import { StaffCardComponent } from '../../../../components/worker-card/staff-card.component';
-import {staff} from '../../../../data/team-content';
+import { staff } from '../../../../data/team-content';
+import { NavService } from '../../../../services/nav.service';
 
 @Component({
   selector: 'app-team',
@@ -17,11 +18,12 @@ export class TeamComponent implements OnInit {
   activeWorker: Employee | undefined;
   staff = staff;
 
-  constructor(private renderer2: Renderer2) {
+  constructor(private renderer2: Renderer2, private navService: NavService) {
   }
 
   ngOnInit(): void {
     this.activeWorker = this.staff[0];
+    this.navService.setContactMail(this.activeWorker.mail);
   }
 
   changeActiveWorkerCard($event: StaffCardComponent): void {
@@ -30,5 +32,7 @@ export class TeamComponent implements OnInit {
     });
     this.activeWorker = $event.staff;
     this.renderer2.addClass($event.element.nativeElement, 'active');
+
+    this.navService.setContactMail(this.activeWorker.mail);
   }
 }

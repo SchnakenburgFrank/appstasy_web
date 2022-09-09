@@ -1,4 +1,4 @@
-import { Component, HostBinding, Input, OnInit, Renderer2 } from '@angular/core';
+import { Component, EventEmitter, HostBinding, Input, OnInit, Output, Renderer2 } from '@angular/core';
 import { Content } from '../../../model/portfolioContent';
 
 @Component({
@@ -12,6 +12,8 @@ export class FlipCardComponent implements OnInit {
 
   @Input() first = false;
   @Input() content!: Content;
+
+  @Output() mockupEmitter = new EventEmitter<string>();
 
   constructor(protected renderer2: Renderer2) {
   }
